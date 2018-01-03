@@ -6,6 +6,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.Query;
 import java.io.Serializable;
 
 @Repository
@@ -23,5 +24,12 @@ public class UrlDAOImpl implements UrlDAO {
     @Override
     public Url getById(long id) {
         return sessionFactory.getCurrentSession().get(Url.class, id);
+    }
+
+    @Override
+    public Url getByTinyUrl(String tinyUrl) {
+        Query query = sessionFactory.getCurrentSession().createQuery("FROM Url u WHERE u.urlCourte =:urlCourte");
+        query.setParameter("urlCourte", tinyUrl);
+        return (Url) query.getSingleResult();
     }
 }
