@@ -23,4 +23,9 @@ public class UrlServiceImpl implements UrlService {
     public Url getById(long id) {
         return urlDAO.getById(id);
     }
+
+    @Override
+    public Url getByTinyUrl(String tinyUrl) {
+        return urlDAO.getByTinyUrl(tinyUrl);
+    }
 }

@@ -2,12 +2,11 @@ package Project.DAO.impl;
 
 import Project.DAO.UserDAO;
 import Project.Model.User;
-import org.hibernate.Hibernate;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-import java.io.Serializable;
-
+@Repository
 public class UserDAOImpl implements UserDAO {
 
     @Autowired

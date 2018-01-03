@@ -6,4 +6,6 @@ public interface UrlService {
     public long add(Url user);
 
     public Url getById(long id);
+
+    public Url getByTinyUrl(String tinyUrl);
 }
