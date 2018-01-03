@@ -62,7 +62,7 @@ public class MainController {
 
         userService.add(user);
 
-        return "redirect:/";
+        return "redirect:/"; 
     }
 
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
