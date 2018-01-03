@@ -42,14 +42,14 @@ public class Url implements Serializable, Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "message", "NotEmpty.message.name");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "url", "NotEmpty.message.name");
 
         if (url.length() < 3) {
-            errors.rejectValue("message", "minValue", "Min.message.name");
+            errors.rejectValue("url", "minValue", "Min.message.name");
         }
 
         if (url.length() > 350) {
-            errors.rejectValue("message", "minValue", "Min.message.name");
+            errors.rejectValue("url", "maxValue", "Max.message.name");
         }
     }
 }
