@@ -29,6 +29,7 @@ public class MainController {
     public String main(ModelMap modelMap, HttpSession httpSession) {
 
         modelMap.addAttribute("Url", new Url());
+        modelMap.addAttribute( "User", new User());
 
         return "Main/index";
     }
@@ -61,7 +62,7 @@ public class MainController {
 
         userService.add(user);
 
-        return "redirect:/";
+        return "redirect:/"; 
     }
 
     @ResponseStatus(value = HttpStatus.NOT_FOUND)

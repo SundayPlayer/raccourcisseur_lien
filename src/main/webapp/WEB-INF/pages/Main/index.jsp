@@ -33,7 +33,7 @@
                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                       <span class="sr-only">Toggle navigation</span>
                   </button>
-                  <a class="navbar-brand" href="#">Raccourcisseur de lien</a>
+                  <a class="navbar-brand" href="/">Raccourcisseur de lien</a>
               </div>
 
           </div>
@@ -43,8 +43,42 @@
       <div class="container" style="margin-top: 65px;">
 
           <div class="row">
+              <div class="col-xs-6 col-sm-9 col-md-9">
+              </div>
+              <div class="col-xs-6 col-sm-3 col-md-3">
 
-              <div class="col-md-3">
+                  <form:form method="POST" modelAttribute="User" action="/connect">
+                      <form:errors path="*" cssClass="errorblock" element="div"/>
+                      <label for="nomC">Nom: </label>
+                      <td><form:input type="text" id="nomC" class="form-control" path="nom" /></td>
+                      <td><form:errors path="nom" cssClass="error" /></td>
+                      <label for="passwordC">Mot de passe : </label>
+                      <td><form:input type="text" id="passwordC" class="form-control" path="password" /></td>
+                      <td><form:errors path="password" cssClass="error" /></td>
+                      <button class="btn btn-primary btn-block" type="submit">Login</button>
+                  </form:form>
+
+                  <form:form method="POST" modelAttribute="User" action="/addUser">
+                      <form:errors path="*" cssClass="errorblock" element="div"/>
+                      <label for="nom">Nom: </label>
+                      <td><form:input type="text" id="nom" class="form-control" path="nom" /></td>
+                      <td><form:errors path="nom" cssClass="error" /></td>
+                      <label for="prenom">Prénom: </label>
+                      <td><form:input type="text" id="prenom" class="form-control" path="prenom" /></td>
+                      <td><form:errors path="prenom" cssClass="error" /></td>
+                      <label for="email">E-mail : </label>
+                      <td><form:input type="text" id="email" class="form-control" path="email" /></td>
+                      <td><form:errors path="email" cssClass="error" /></td>
+                      <label for="password">Mot de passe : </label>
+                      <td><form:input type="text" id="password" class="form-control" path="password" /></td>
+                      <td><form:errors path="password" cssClass="error" /></td>
+                      <button class="btn btn-primary btn-block" type="submit">Register</button>
+                  </form:form>
+
+              </div>
+              <div class="col-xs-1 col-sm-3 col-md-3">
+              </div>
+              <div class="col-xs-10 col-sm-6 col-md-6">
                   <p class="lead">Tchat</p>
                   <div class="list-group">
 
@@ -55,6 +89,19 @@
                             <td><form:errors path="url" cssClass="error" /></td>
                             <button class="btn btn-primary btn-block" type="submit">Raccourcir l'Url</button>
                         </form:form>
+                  </div>
+              </div>
+              <div class="col-xs-1 col-sm-3 col-md-3">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                      <button class="btn btn-info btn-block" type="button">Nb lien</button>
+                  </div>
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                      <button class="btn btn-info btn-block" type="button">Nb user</button>
+                  </div>
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                      <button class="btn btn-info btn-block" type="button">Argent collecté</button>
                   </div>
               </div>
           </div>
