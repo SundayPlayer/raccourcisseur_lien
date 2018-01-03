@@ -33,7 +33,7 @@
                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                       <span class="sr-only">Toggle navigation</span>
                   </button>
-                  <a class="navbar-brand" href="#">Raccourcisseur de lien</a>
+                  <a class="navbar-brand" href="/">Raccourcisseur de lien</a>
               </div>
 
           </div>
@@ -43,8 +43,15 @@
       <div class="container" style="margin-top: 65px;">
 
           <div class="row">
-
-              <div class="col-md-3">
+              <div class="col-xs-6 col-sm-9 col-md-9">
+              </div>
+              <div class="col-xs-6 col-sm-3 col-md-3">
+                  <button class="btn btn-primary btn-block" type="button">Login</button>
+                  <button class="btn btn-primary btn-block" type="button">Register</button>
+              </div>
+              <div class="col-xs-1 col-sm-3 col-md-3">
+              </div>
+              <div class="col-xs-10 col-sm-6 col-md-6">
                   <p class="lead">Tchat</p>
                   <div class="list-group">
 
@@ -55,6 +62,19 @@
                             <td><form:errors path="url" cssClass="error" /></td>
                             <button class="btn btn-primary btn-block" type="submit">Raccourcir l'Url</button>
                         </form:form>
+                  </div>
+              </div>
+              <div class="col-xs-1 col-sm-3 col-md-3">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                      <button class="btn btn-info btn-block" type="button">Nb lien</button>
+                  </div>
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                      <button class="btn btn-info btn-block" type="button">Nb user</button>
+                  </div>
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                      <button class="btn btn-info btn-block" type="button">Argent collecté</button>
                   </div>
               </div>
           </div>
