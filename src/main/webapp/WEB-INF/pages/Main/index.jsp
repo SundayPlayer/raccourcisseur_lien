@@ -47,13 +47,13 @@
               </div>
               <div class="col-xs-6 col-sm-3 col-md-3">
 
-                  <form:form method="POST" modelAttribute="User" action="/addUser">
+                  <form:form method="POST" modelAttribute="User" action="/connect">
                       <form:errors path="*" cssClass="errorblock" element="div"/>
-                      <label for="nom">Nom: </label>
+                      <label for="nomC">Nom: </label>
                       <td><form:input type="text" id="nomC" class="form-control" path="nom" /></td>
                       <td><form:errors path="nom" cssClass="error" /></td>
-                      <label for="password">Mot de passe : </label>
-                      <td><form:input type="text" id="password" class="form-control" path="password" /></td>
+                      <label for="passwordC">Mot de passe : </label>
+                      <td><form:input type="text" id="passwordC" class="form-control" path="password" /></td>
                       <td><form:errors path="password" cssClass="error" /></td>
                       <button class="btn btn-primary btn-block" type="submit">Login</button>
                   </form:form>
@@ -63,16 +63,15 @@
                       <label for="nom">Nom: </label>
                       <td><form:input type="text" id="nom" class="form-control" path="nom" /></td>
                       <td><form:errors path="nom" cssClass="error" /></td>
-                      <label for="prenom">Prenom: </label>
+                      <label for="prenom">Prénom: </label>
                       <td><form:input type="text" id="prenom" class="form-control" path="prenom" /></td>
                       <td><form:errors path="prenom" cssClass="error" /></td>
-                      <label for="email">Email : </label>
+                      <label for="email">E-mail : </label>
                       <td><form:input type="text" id="email" class="form-control" path="email" /></td>
                       <td><form:errors path="email" cssClass="error" /></td>
                       <label for="password">Mot de passe : </label>
                       <td><form:input type="text" id="password" class="form-control" path="password" /></td>
                       <td><form:errors path="password" cssClass="error" /></td>
-
                       <button class="btn btn-primary btn-block" type="submit">Register</button>
                   </form:form>
 
