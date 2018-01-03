@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hibernate Spring Exemple</title>
+    <title>Raccourcisseur de liens</title>
 
 
     <spring:url value="/resources/css/style.css" var="mainCss" />
@@ -33,7 +33,7 @@
                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                       <span class="sr-only">Toggle navigation</span>
                   </button>
-                  <a class="navbar-brand" href="#">Hibernate Spring</a>
+                  <a class="navbar-brand" href="#">Raccourcisseur de lien</a>
               </div>
 
           </div>
@@ -48,39 +48,13 @@
                   <p class="lead">Tchat</p>
                   <div class="list-group">
 
-                        <form:form method="POST" modelAttribute="Message" action="/addMessage">
+                        <form:form method="POST" modelAttribute="Url" action="/addUrl">
                             <form:errors path="*" cssClass="errorblock" element="div" />
-                            <label for="message">Message: </label>
-                            <td><form:input type="text" id="message" class="form-control" path="message" /></td>
-                            <td><form:errors path="message" cssClass="error" /></td>
-                            <button class="btn btn-primary btn-block" type="submit">Ajouter le message</button>
+                            <label for="url">Url: </label>
+                            <td><form:input type="text" id="url" class="form-control" path="url" /></td>
+                            <td><form:errors path="url" cssClass="error" /></td>
+                            <button class="btn btn-primary btn-block" type="submit">Raccourcir l'Url</button>
                         </form:form>
-
-                      <a href="/deleteUser" class="list-group-item active">Supprimer l'utilisateur: ${User.id}</a>
-                  </div>
-              </div>
-
-              <div class="col-md-9">
-                  <div class="well">
-                      <div class="text-right">
-                            <form:form method="POST" action="/deleteMessage">
-                              <form:errors path="*" cssClass="errorblock" element="div" />
-                              <button class="btn btn-danger" type="submit">Supprimer Messages de: ${User.nom} ${User.prenom} (${User.id})</button>
-                           </form:form>
-                      </div>
-                      <hr>
-
-                       <c:forEach items="${User.messages}" var="message">
-                            <div class="row">
-                                 <div class="col-md-12">
-                                     <p>${message.message}</p>
-                                     <span class="pull-right">${message.user.nom} (${message.user.id})</span>
-                                     <p>${fn:substring(message.encode, 0, 70)}...</p>
-                                 </div>
-                             </div>
-                             <hr>
-                       </c:forEach>
-
                   </div>
               </div>
           </div>
