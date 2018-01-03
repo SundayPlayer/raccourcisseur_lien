@@ -28,11 +28,9 @@ public class MainController {
     }
 
     @RequestMapping( method = RequestMethod.POST , value = "/addUrl")
-    public String addUrl(@ModelAttribute("Url") @Valid Url message, BindingResult result, ModelMap modelMap, HttpSession httpSession) {
+    public String addUrl(@ModelAttribute("Url") @Valid Url url, BindingResult result, ModelMap modelMap, HttpSession httpSession) {
 
-        Url url = (Url) httpSession.getAttribute("Url");
-
-        message.validate(message, result);
+        url.validate(url, result);
         if (result.hasErrors()) {
             return "Main/index";
         }
