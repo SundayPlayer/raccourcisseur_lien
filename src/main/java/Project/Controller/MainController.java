@@ -1,6 +1,7 @@
 package Project.Controller;
 
 import Project.Model.Url;
+import Project.Model.User;
 import Project.Service.UrlService;
 import Project.Utils.RandomString;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,7 @@ public class MainController {
     public String main(ModelMap modelMap, HttpSession httpSession) {
 
         modelMap.addAttribute("Url", new Url());
+        modelMap.addAttribute( "User", new User());
 
         return "Main/index";
     }
