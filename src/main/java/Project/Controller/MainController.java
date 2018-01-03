@@ -2,6 +2,7 @@ package Project.Controller;
 
 import Project.Model.Url;
 import Project.Service.UrlService;
+import Project.Utils.RandomString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -34,6 +35,12 @@ public class MainController {
         if (result.hasErrors()) {
             return "Main/index";
         }
+
+        RandomString randGen = new RandomString();
+
+        String tinyUrl = randGen.nextString();
+
+        url.setUrlCourte(tinyUrl);
 
         urlService.add(url);
 
