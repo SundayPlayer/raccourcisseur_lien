@@ -46,8 +46,36 @@
               <div class="col-xs-6 col-sm-9 col-md-9">
               </div>
               <div class="col-xs-6 col-sm-3 col-md-3">
-                  <button class="btn btn-primary btn-block" type="button">Login</button>
-                  <button class="btn btn-primary btn-block" type="button">Register</button>
+
+                  <form:form method="POST" modelAttribute="User" action="/addUser">
+                      <form:errors path="*" cssClass="errorblock" element="div"/>
+                      <label for="nom">Nom: </label>
+                      <td><form:input type="text" id="nomC" class="form-control" path="nom" /></td>
+                      <td><form:errors path="nom" cssClass="error" /></td>
+                      <label for="password">Mot de passe : </label>
+                      <td><form:input type="text" id="password" class="form-control" path="password" /></td>
+                      <td><form:errors path="password" cssClass="error" /></td>
+                      <button class="btn btn-primary btn-block" type="submit">Login</button>
+                  </form:form>
+
+                  <form:form method="POST" modelAttribute="User" action="/addUser">
+                      <form:errors path="*" cssClass="errorblock" element="div"/>
+                      <label for="nom">Nom: </label>
+                      <td><form:input type="text" id="nom" class="form-control" path="nom" /></td>
+                      <td><form:errors path="nom" cssClass="error" /></td>
+                      <label for="prenom">Prenom: </label>
+                      <td><form:input type="text" id="prenom" class="form-control" path="prenom" /></td>
+                      <td><form:errors path="prenom" cssClass="error" /></td>
+                      <label for="email">Email : </label>
+                      <td><form:input type="text" id="email" class="form-control" path="email" /></td>
+                      <td><form:errors path="email" cssClass="error" /></td>
+                      <label for="password">Mot de passe : </label>
+                      <td><form:input type="text" id="password" class="form-control" path="password" /></td>
+                      <td><form:errors path="password" cssClass="error" /></td>
+
+                      <button class="btn btn-primary btn-block" type="submit">Register</button>
+                  </form:form>
+
               </div>
               <div class="col-xs-1 col-sm-3 col-md-3">
               </div>
