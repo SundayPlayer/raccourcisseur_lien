@@ -29,10 +29,18 @@ public class User implements Serializable {
     @Size(min = 2, max = 50)
     @Getter @Setter private String prenom;
 
+    @Column(name="email")
+    @Getter @Setter private String email;
+
+    @Column(name="password")
+    @Getter @Setter private String password;
+
     public User() {}
 
-    public User(String nom, String prenom) {
+    public User(String nom, String prenom, String email, String password) {
         this.nom = nom;
         this.prenom = prenom;
+        this.email = email;
+        this.password = password;
     }
 }
