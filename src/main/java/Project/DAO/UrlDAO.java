@@ -6,6 +6,6 @@ public interface UrlDAO {
 
     public Long add(Url url);
 
-    public Url getById(long id, boolean lazy);
+    public Url getById(long id);
 
 }
