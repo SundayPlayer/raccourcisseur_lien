@@ -45,11 +45,11 @@
 
                   <form:form method="POST" modelAttribute="User" action="/connect">
                       <form:errors path="*" cssClass="errorblock" element="div"/>
-                      <label for="emailC">Nom: </label>
+                      <label for="emailC">Email: </label>
                       <td><form:input type="text" id="emailC" class="form-control" path="email" /></td>
                       <td><form:errors path="email" cssClass="error" /></td>
                       <label for="passwordC">Mot de passe : </label>
-                      <td><form:input type="text" id="passwordC" class="form-control" path="password" /></td>
+                      <td><form:input type="password" id="passwordC" class="form-control" path="password" /></td>
                       <td><form:errors path="password" cssClass="error" /></td>
                       <button class="btn btn-primary btn-block" type="submit">Login</button>
                   </form:form>
@@ -66,7 +66,7 @@
                       <td><form:input type="text" id="email" class="form-control" path="email" /></td>
                       <td><form:errors path="email" cssClass="error" /></td>
                       <label for="password">Mot de passe : </label>
-                      <td><form:input type="text" id="password" class="form-control" path="password" /></td>
+                      <td><form:input type="password" id="password" class="form-control" path="password" /></td>
                       <td><form:errors path="password" cssClass="error" /></td>
                       <button class="btn btn-primary btn-block" type="submit">Register</button>
                   </form:form>
