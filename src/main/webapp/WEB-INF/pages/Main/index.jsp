@@ -85,15 +85,16 @@
                             <button class="btn btn-primary btn-block" type="submit">Raccourcir l'Url</button>
                         </form:form>
                   </div>
+
                   <div class="col-xs-12 col-sm-12 col-md-12">
                       <div class="col-xs-12 col-sm-4 col-md-4">
-                          <button class="btn btn-info btn-block" type="button">Nb lien</button>
+                          <p type="text">Nb lien : </p>
                       </div>
                       <div class="col-xs-12 col-sm-4 col-md-4">
-                          <button class="btn btn-info btn-block" type="button">Nb user</button>
+                          <p type="text">Nb user : </p>
                       </div>
                       <div class="col-xs-12 col-sm-4 col-md-4">
-                          <button class="btn btn-info btn-block" type="button">Argent collecté</button>
+                          <p type="text">Argent collecté : </p>
                       </div>
                   </div>
               </div>
