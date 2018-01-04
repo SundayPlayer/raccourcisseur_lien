@@ -1,5 +1,6 @@
 package Project.Model;
 
+import Project.Utils.Encode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -38,6 +39,8 @@ public class User implements Serializable {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
-        this.password = password;
+        //this.password = password;
+
+        this.password = Encode.encodeSHA512(this.password, null);
     }
 }

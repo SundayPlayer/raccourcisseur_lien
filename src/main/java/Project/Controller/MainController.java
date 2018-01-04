@@ -4,6 +4,7 @@ import Project.Model.Url;
 import Project.Model.User;
 import Project.Service.UrlService;
 import Project.Service.UserService;
+import Project.Utils.Encode;
 import Project.Utils.RandomString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -60,6 +61,7 @@ public class MainController {
             return "redirect:/";
         }
 
+        user.setPassword(Encode.encodeSHA512(user.getPassword(),null));
         userService.add(user);
 
         return "redirect:/"; 
