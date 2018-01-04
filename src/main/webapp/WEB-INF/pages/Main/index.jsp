@@ -88,10 +88,10 @@
 
                   <div class="col-xs-12 col-sm-12 col-md-12">
                       <div class="col-xs-12 col-sm-4 col-md-4">
-                          <p type="text">Nb lien : </p>
+                          <p type="text">Nb lien : <c:out value="${countUrl}" /></p>
                       </div>
                       <div class="col-xs-12 col-sm-4 col-md-4">
-                          <p type="text">Nb user : </p>
+                          <p type="text">Nb user : <c:out value="${countUser}" /></p>
                       </div>
                       <div class="col-xs-12 col-sm-4 col-md-4">
                           <p type="text">Argent collecté : </p>

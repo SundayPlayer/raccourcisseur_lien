@@ -31,6 +31,8 @@ public class MainController {
 
         modelMap.addAttribute("Url", new Url());
         modelMap.addAttribute( "User", new User());
+        modelMap.addAttribute("countUser", userService.getCount());
+        modelMap.addAttribute("countUrl", urlService.getCount());
 
         return "Main/index";
     }

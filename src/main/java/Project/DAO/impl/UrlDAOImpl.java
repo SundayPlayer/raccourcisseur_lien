@@ -28,7 +28,7 @@ public class UrlDAOImpl implements UrlDAO {
 
     @Override
     public Long getCount() {
-        return (Long) sessionFactory.getCurrentSession().createQuery("select count(*) from Book").getSingleResult();
+        return (Long) sessionFactory.getCurrentSession().createQuery("select count(*) from Url").getSingleResult();
     }
 
     @Override
