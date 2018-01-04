@@ -45,9 +45,9 @@
 
                   <form:form method="POST" modelAttribute="User" action="/connect">
                       <form:errors path="*" cssClass="errorblock" element="div"/>
-                      <label for="nomC">Nom: </label>
-                      <td><form:input type="text" id="nomC" class="form-control" path="nom" /></td>
-                      <td><form:errors path="nom" cssClass="error" /></td>
+                      <label for="emailC">Nom: </label>
+                      <td><form:input type="text" id="emailC" class="form-control" path="email" /></td>
+                      <td><form:errors path="email" cssClass="error" /></td>
                       <label for="passwordC">Mot de passe : </label>
                       <td><form:input type="text" id="passwordC" class="form-control" path="password" /></td>
                       <td><form:errors path="password" cssClass="error" /></td>
