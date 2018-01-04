@@ -29,7 +29,7 @@ public class Url implements Serializable, Validator {
     @Getter @Setter private String urlCourte;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_user", nullable = false)
+    @JoinColumn(name = "id_user")
     @Getter @Setter private User user;
 
     public Url() {}

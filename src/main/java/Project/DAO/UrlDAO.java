@@ -8,5 +8,7 @@ public interface UrlDAO {
 
     public Url getById(long id);
 
+    public Long getCount();
+
     public Url getByTinyUrl(String tinyUrl);
 }

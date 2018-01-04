@@ -27,6 +27,11 @@ public class UrlDAOImpl implements UrlDAO {
     }
 
     @Override
+    public Long getCount() {
+        return (Long) sessionFactory.getCurrentSession().createQuery("select count(*) from Book").getSingleResult();
+    }
+
+    @Override
     public Url getByTinyUrl(String tinyUrl) {
         Query query = sessionFactory.getCurrentSession().createQuery("FROM Url u WHERE u.urlCourte =:urlCourte");
         query.setParameter("urlCourte", tinyUrl);

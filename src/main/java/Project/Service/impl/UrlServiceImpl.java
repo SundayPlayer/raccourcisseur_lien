@@ -25,6 +25,11 @@ public class UrlServiceImpl implements UrlService {
     }
 
     @Override
+    public Long getCount() {
+        return urlDAO.getCount();
+    }
+
+    @Override
     public Url getByTinyUrl(String tinyUrl) {
         return urlDAO.getByTinyUrl(tinyUrl);
     }
