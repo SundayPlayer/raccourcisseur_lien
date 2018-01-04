@@ -57,14 +57,27 @@ public class MainController {
     @RequestMapping(method = RequestMethod.POST, value = "/addUser")
     public String addUser(@ModelAttribute("User") @Valid User user, BindingResult result, ModelMap modelMap, HttpSession httpSession) {
 
-        if (httpSession.getAttribute("userId") != null) {
-            return "redirect:/";
-        }
-
         user.setPassword(Encode.encodeSHA512(user.getPassword(),null));
         userService.add(user);
 
-        return "redirect:/"; 
+        return "redirect:/";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/connect")
+    public String connect(@ModelAttribute("User") @Valid User user, BindingResult result, ModelMap modelMap, HttpSession httpSession) {
+
+        if (httpSession.getAttribute("userId") != null)
+            return "redirect:/";
+
+        User savedUser = userService.getByMail(user.getEmail());
+
+        String toTestHashPass = Encode.encodeSHA512(user.getPassword(),null);
+        String hashPass = savedUser.getPassword();
+
+        if (toTestHashPass.equals(hashPass))
+            httpSession.setAttribute("userId", savedUser.getId());
+
+        return "redirect:/";
     }
 
     @ResponseStatus(value = HttpStatus.NOT_FOUND)

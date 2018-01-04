@@ -6,6 +6,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.Query;
+
 @Repository
 public class UserDAOImpl implements UserDAO {
 
@@ -20,6 +22,13 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public User getById(long id) {
         return sessionFactory.getCurrentSession().get(User.class, id);
+    }
+
+    @Override
+    public User getByMail(String mail) {
+        Query query = sessionFactory.getCurrentSession().createQuery("FROM User u WHERE u.email =:mail");
+        query.setParameter("mail", mail);
+        return (User) query.getSingleResult();
     }
 
     @Override
