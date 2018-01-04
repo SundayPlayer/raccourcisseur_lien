@@ -28,11 +28,16 @@ public class Url implements Serializable, Validator {
     @Size(min = 3, max = 50)
     @Getter @Setter private String urlCourte;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_user", nullable = false)
+    @Getter @Setter private User user;
+
     public Url() {}
 
-    public Url(String url, String urlCourte) {
+    public Url(String url, String urlCourte, User user) {
         this.url = url;
         this.urlCourte = urlCourte;
+        this.user = user;
     }
 
     @Override

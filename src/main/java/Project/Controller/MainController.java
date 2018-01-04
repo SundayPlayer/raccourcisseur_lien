@@ -49,6 +49,11 @@ public class MainController {
 
         url.setUrlCourte(tinyUrl);
 
+        if (httpSession.getAttribute("userId") != null)
+        {
+            url.setUser(userService.getById((Long) httpSession.getAttribute("userId")));
+        }
+
         urlService.add(url);
 
         return "redirect:/";

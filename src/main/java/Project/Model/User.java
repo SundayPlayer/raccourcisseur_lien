@@ -3,10 +3,13 @@ package Project.Model;
 import Project.Utils.Encode;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "User")
@@ -32,6 +35,10 @@ public class User implements Serializable {
 
     @Column(name="password")
     @Getter @Setter private String password;
+
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @OneToMany(cascade=CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "user")
+    @Getter @Setter private List<Url> urls;
 
     public User() {}
 
