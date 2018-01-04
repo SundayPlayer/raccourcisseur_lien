@@ -11,4 +11,6 @@ public interface UserService {
     public User getByMail(String mail);
 
     public void delete(User user);
+
+    public Long getCount();
 }

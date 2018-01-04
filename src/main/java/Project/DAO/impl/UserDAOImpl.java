@@ -32,6 +32,11 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
+    public Long getCount() {
+        return (Long) sessionFactory.getCurrentSession().createQuery("select count(*) from User").getSingleResult();
+    }
+
+    @Override
     public void delete(User user) {
         sessionFactory.getCurrentSession().remove(user);
     }
